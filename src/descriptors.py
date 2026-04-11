@@ -43,7 +43,7 @@ class DescriptionCheck:
 
     def __set__(self, task, value):  # set a new description
         if isinstance(value, str):  # check if description is str
-            if len(value) > 0:  # check if description is not empty
+            if len(value.strip()) > 0:  # check if description is not empty
                 setattr(task, self.name, value)
             else:
                 raise ValueError("Wrong description")
