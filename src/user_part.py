@@ -2,6 +2,8 @@ from file_sourced import File_source
 from generator import Generator_source
 from input_source import Input_source
 from check_sources import check_source
+
+
 def choose_option():
     try:
         opt = int(input())
@@ -13,6 +15,8 @@ def choose_option():
     except ValueError:
         print("Mistake. Try again")
         choose_option()
+
+
 def user_part():
     print("Hello! Here you can check how sources work.")
     print("How do you want to create tasks?")
@@ -25,8 +29,7 @@ def user_part():
             file_source = File_source("input_file.json")
             check_source(file_source)
         elif opt == 2:  # check generator
-            print(
-                "Now descriptions of the tasks are generated from tasks in file 'describ_list.txt'. You can change tasks by changing the file")
+            print("Now descriptions of the tasks are generated from tasks in file 'describ_list.txt'. You can change tasks by changing the file")
             generator = Generator_source()
             check_source(generator)
         elif opt == 3:  # check input source
